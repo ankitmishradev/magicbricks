@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Property {
-	private static final String path = "configs/config.properties";
+	private static final String path = "src/test/resources/configs/config.properties";
 
 	private static RuntimeException execption(String key) {
 		return new RuntimeException(key + " not specified in the \"config.properties\" file");
@@ -27,7 +27,7 @@ public class Property {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			throw new RuntimeException("configs.properties not found at " + path);
+			throw new RuntimeException("config.properties not found at " + path);
 		}
 
 		return props;

@@ -1,20 +1,12 @@
 package stepDefs;
 
 import factory.Page;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class PropworthStepDefs extends Page {
-	@Before
-	public void setup() {
-		build();
-	}
+public class PropWorthStepDefs extends Page {
 
 	@Given("^User is on propworth page$")
 	public void user_is_on_propworth_page() {
@@ -83,13 +75,4 @@ public class PropworthStepDefs extends Page {
 		propworthPage.verifyInvalidAreaError(errmsg);
 	}
 
-	@After
-	public void close() {
-		tearDown();
-	}
-
-	@AfterStep
-	public void takeScreenshot(Scenario scenario) {
-		SS.scenarioStep(scenario);
-	}
 }

@@ -69,4 +69,8 @@ public class Switcher {
 	public WebDriver page() {
 		return driver.switchTo().defaultContent();
 	}
+
+	public int tabCount() {
+		return driver.getWindowHandles().size();
+	}
 }

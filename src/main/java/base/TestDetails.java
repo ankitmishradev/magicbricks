@@ -2,8 +2,6 @@ package base;
 
 import org.testng.ITestResult;
 
-import util.TestType;
-
 public class TestDetails {
 	private ITestResult testResult;
 
@@ -27,28 +25,8 @@ public class TestDetails {
 		return this;
 	}
 
-	public TestDetails category(TestType type) {
-		String value;
-		switch (type) {
-		case Negative:
-			value = "Negative";
-			break;
-		case Positive:
-			value = "Positive";
-			break;
-		case Functional:
-			value = "Functional";
-			break;
-		case Regression:
-			value = "Regression";
-			break;
-		case Smoke:
-			value = "Smoke";
-			break;
-		default:
-			value = "Uncategorised";
-			break;
-		}
+	public TestDetails category(String... value) {
+
 		testResult.setAttribute("category", value);
 		return this;
 	}

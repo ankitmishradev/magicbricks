@@ -9,7 +9,6 @@ import base.DataChunk;
 import factory.Page;
 import provider.Property;
 import provider.Provider;
-import util.TestType;
 import util.step.Step;
 
 public class UnavailableLocality extends Page {
@@ -22,7 +21,8 @@ public class UnavailableLocality extends Page {
 	@BeforeMethod
 	public void setDetails(ITestResult result) {
 		Details.bridge(result).description("Calculate property with unavailable locality")
-				.name("Prop Worth Unavailable Locality").device(Property.browser()).category(TestType.Positive);
+				.name("Prop Worth Unavailable Locality").device(Property.browser())
+				.category("PropWorth", "Negative", "Unit", "Input");
 	}
 
 	@Test(dataProvider = "data", dataProviderClass = Provider.class, priority = 1)

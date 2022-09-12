@@ -9,7 +9,6 @@ import base.DataChunk;
 import factory.Page;
 import provider.Property;
 import provider.Provider;
-import util.TestType;
 import util.step.Step;
 
 public class InvalidKey extends Page {
@@ -22,7 +21,7 @@ public class InvalidKey extends Page {
 	@BeforeMethod
 	public void setDetails(ITestResult result) {
 		Details.bridge(result).description("Calculate property worth with invalid locality key")
-				.name("Prop Worth Locality Key").device(Property.browser()).category(TestType.Negative);
+				.name("Prop Worth Locality Key").device(Property.browser()).category("Negative", "PropWorth", "Unit");
 	}
 
 	@Test(dataProvider = "data", dataProviderClass = Provider.class, priority = 2)

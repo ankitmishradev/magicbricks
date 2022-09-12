@@ -74,7 +74,7 @@ public class Reader {
 	public String find(int row, int column) {
 		DataFormatter formatter = new DataFormatter();
 		String value = formatter.formatCellValue(sheet.getRow(row).getCell(column));
-		return value.isEmpty() ? null : value;
+		return value.isEmpty() ? null : value.trim();
 	}
 
 	public Manager columns() {

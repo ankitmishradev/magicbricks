@@ -12,6 +12,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +20,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import provider.Property;
+import util.MouseEvent;
 
 public class Base {
 	public static WebDriver Driver;
@@ -28,6 +30,12 @@ public class Base {
 	public static Wait Wait;
 	public static TestDetails Details;
 	public static Logger Log;
+	public static Verify Verify;
+	public static MouseEvent Mouse;
+
+	private static void initMouseEvent() {
+		Mouse = new MouseEvent(Driver);
+	}
 
 	private static void initLogger() {
 		Log = new Logger();
@@ -38,7 +46,7 @@ public class Base {
 	}
 
 	private static void initScreenshot() {
-		SS = new Screenshot(Driver, "", true);
+		SS = new Screenshot(Driver);
 	}
 
 	private static void initScroller() {
@@ -53,12 +61,18 @@ public class Base {
 		Wait = new Wait(Driver);
 	}
 
+	private static void initVerify() {
+		Verify = new Verify(Driver);
+	}
+
 	protected static void initDriver() {
 		String browser = Property.browser();
 		switch (browser) {
 		case "Chrome":
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-notifications");
 			WebDriverManager.chromedriver().setup();
-			Driver = new ChromeDriver();
+			Driver = new ChromeDriver(options);
 			break;
 		case "Edge":
 			WebDriverManager.edgedriver().setup();
@@ -88,6 +102,8 @@ public class Base {
 		initWait();
 		initTestDetails();
 		initLogger();
+		initVerify();
+		initMouseEvent();
 	}
 
 	protected static void tearDown() {
@@ -136,12 +152,14 @@ public class Base {
 		}
 	}
 
-	public static WebElement getElementWithText(List<WebElement> elements, String text) {
-		Wait.untilVisible(elements);
+	public static WebElement getElementWithText(List<WebElement> elements, String text, boolean contains) {
+//		Wait.untilVisible(elements);
 		WebElement result = null;
 		try {
 			for (WebElement propertyType : elements) {
-				if (propertyType.getText().equals(text)) {
+				String elemText = propertyType.getText();
+				boolean assertion = contains ? elemText.contains(text) : elemText.equals(text);
+				if (assertion) {
 					result = propertyType;
 					break;
 				}
@@ -152,5 +170,9 @@ public class Base {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public static WebElement getElementWithText(List<WebElement> elements, String text) {
+		return getElementWithText(elements, text, false);
 	}
 }

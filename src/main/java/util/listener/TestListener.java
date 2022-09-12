@@ -68,7 +68,7 @@ public class TestListener extends Base implements ITestListener {
 		ExtentTest test = ExtentTestManager.getTest();
 		test.assignAuthor(Property.get("author"));
 		test.assignDevice((String) iTestResult.getAttribute("device"));
-		test.assignCategory((String) iTestResult.getAttribute("category"));
+		test.assignCategory((String[]) iTestResult.getAttribute("category"));
 	}
 
 	@Override

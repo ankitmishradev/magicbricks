@@ -8,15 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import base.Base;
 
 //Page Factory or Page Object
-public class PropworthPage extends Base {
+public class PropWorthPage extends Base {
 	PropWorth propWorth;
 
-	public PropworthPage(WebDriver driver) {
+	public PropWorthPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		propWorth = new PropWorth();
 	}
@@ -103,12 +102,14 @@ public class PropworthPage extends Base {
 	}
 
 	public void selectSuperArea(String suparea) {
-		String[] area = suparea.split(" ");
-		Wait.untilVisible(superAreaInput).click();
-		superAreaInput.sendKeys(area[0]);
-		superAreaUnitButton.click();
-		getElementWithText(superAreaUnits, area[1]).click();
-		propWorth.superArea(area[0], area[1]);
+		if (!suparea.isEmpty()) {
+			String[] area = suparea.split(" ");
+			Wait.untilVisible(superAreaInput).click();
+			superAreaInput.sendKeys(area[0]);
+			superAreaUnitButton.click();
+			getElementWithText(superAreaUnits, area[1]).click();
+			propWorth.superArea(area[0], area[1]);
+		}
 	}
 
 	public void selectFloor(String floor) {
@@ -135,12 +136,11 @@ public class PropworthPage extends Base {
 	}
 
 	public void verifyPropDetails() {
-		Assert.assertEquals(propDetails.getText(), propWorth.result());
+		Verify.textEqual(propDetails, propWorth.result());
 	}
 
 	public void verifyUnavailableLocError(String err) {
-		String msg = noPropertyError.getText();
-		Assert.assertEquals(msg, err);
+		Verify.textEqual(noPropertyError, err);
 	}
 
 	public void clickOnSendButton() {
@@ -148,13 +148,11 @@ public class PropworthPage extends Base {
 	}
 
 	public void verifyInvalidLocKeyError(String err) {
-		String msg = invalidKeyError.getText();
-		Assert.assertEquals(msg, err);
+		Verify.textEqual(invalidKeyError, err);
 	}
 
 	public void verifyInvalidAreaError(String err) {
-		String msg = areaError.getText();
-		Assert.assertEquals(msg, err);
+		Verify.textEqual(areaError, err);
 	}
 }
 
