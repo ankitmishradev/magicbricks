@@ -38,4 +38,3 @@ MagicBricks automation testing using testNG and BDD Cucumber frameworks.
 | --- | ---------------------------------------------------------------------------- |
 | 👤  | Ankit Mishra                                                                 |
 | 📧  | <a href="mailto:ankitmishra.inbox@gmail.com">ankitmishra.inbox@gmail.com</a> |
-| 📱  | <a href="tel:+919565629239">+91 95656 29239</a>                              |
