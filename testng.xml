@@ -4,13 +4,19 @@
 	<listeners>
 		<listener class-name="util.listener.TestListener"></listener>
 	</listeners>
-	<test name="Property Worth Calculator" >
-		<classes>
-			<class name="testng.propworth.ValidData" />
-			<class name="testng.propworth.InvalidKey" />
-			<class name="testng.propworth.UnavailableLocality" />
-			<class name="testng.propworth.InvalidArea" />
-		</classes>
+	<test name="Property Worth Calculator">
+		<packages>
+			<package name="testng.propworth"></package>
+		</packages>
 	</test>
-	
+	<test name="Book Expert Call">
+		<packages>
+			<package name="testng.advertisement"></package>
+		</packages>
+	</test>
+	<test name="Property Advertisement">
+		<packages>
+			<package name="testng.expertcall"></package>
+		</packages>
+	</test>
 </suite> <!-- TestNG Automation -->

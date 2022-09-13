@@ -153,7 +153,7 @@ public class Base {
 	}
 
 	public static WebElement getElementWithText(List<WebElement> elements, String text, boolean contains) {
-//		Wait.untilVisible(elements);
+
 		WebElement result = null;
 		try {
 			for (WebElement propertyType : elements) {

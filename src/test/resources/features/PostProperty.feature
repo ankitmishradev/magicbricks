@@ -68,7 +68,6 @@ Feature: Post a Property
     Examples: 
       | category | img          | count |
       | exterior | exterior.jpg |     2 |
-      | exterior | living.jpg   |     1 |
       | exterior | bedroom.jpg  |     1 |
 
   @Unit @Positive @Radio @Select
@@ -83,7 +82,6 @@ Feature: Post a Property
       | status             | avail_m | avail_y | age              | err_count | section                                 |
       | Under Construction | March   |    2024 |                  |         0 | Transaction Type, Property Availability |
       | Ready to Move      |         |         | New Construction |         0 | Transaction Type, Property Availability |
-      | Ready to Move      |         |         | 10 to 15 years   |         0 | Transaction Type, Property Availability |
 
   @Unit @Negative @Checkbox
   Scenario: Verify Post Property Form without agreeing to terms

@@ -86,6 +86,7 @@ public class PropWorthPage extends Base {
 	}
 
 	public void selectLocality(String locality) {
+		Wait.untilVisible(locSuggestions);
 		getElementWithText(locSuggestions, locality).click();
 		propWorth.locality(locality);
 	}

@@ -32,10 +32,10 @@ public class SetupStepDefs extends Page {
 	@Before
 	public void before(Scenario scenario) {
 		if (findTag(scenario, noTearDownTag)) {
-			noTearDown = true;
-			if (Driver == null) {
+			if (Driver.toString().contains("(null)")) {
 				build();
 			}
+			noTearDown = true;
 		} else {
 			build();
 		}
@@ -55,7 +55,7 @@ public class SetupStepDefs extends Page {
 
 	@AfterAll
 	public static void after_all() {
-		if (Driver != null)
+		if (!Driver.toString().equals("(null)"))
 			tearDown();
 	}
 

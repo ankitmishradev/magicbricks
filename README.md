@@ -28,6 +28,10 @@ MagicBricks automation testing using testNG and BDD Cucumber frameworks.
 
 ## Final Report
 
+|                                                                              Cucumber                                                                              |                                                                               TestNG                                                                                |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <table> <tr> <td>**Total**</td> <td>**Passed**</td> <td>**Failed**</td> <td>**Skipped**</td> </tr><tr> <td>50</td> <td>49</td> <td>1</td> <td>0</td> </tr></table> | <table> <tr> <td>**Total**</td> <td>**Passed**</td> <td>**Failed**</td> <td>**Skipped**</td> </tr> <tr> <td>26</td> <td>26</td> <td>0</td> <td>0</td> </tr></table> |
+
 ## Author
 
 |     |                                                                              |
