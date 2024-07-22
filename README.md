@@ -4,17 +4,17 @@ MagicBricks automation testing using testNG and BDD Cucumber frameworks.
 
 ## Tools and Frameworks
 
-|                      |                 |                    |         |
-| -------------------- | --------------- | ------------------ | ------- |
-| **Tools**            | Selenium        | Maven              | Jenkins |
-| **Framworks**        | TestNG          | Cucumber           |         |
-| **Language**         | Java            | Gherkin            |         |
-| **IDE**              | Eclipse         |                    |         |
-| **Packages**         | Apache POI      | Web Driver Manager |         |
-| **Reports**          | Jenkins Reports | Extent Reports     |         |
-| **Version Control**  | Git             | Github             |         |
-| **Operating System** | Windows 10      |                    |         |
-| **Web Browser**      | Chrome          |                    |         |
+|                      |                 |                  |         |
+| -------------------- | --------------- | ---------------- | ------- |
+| **Tools**            | Selenium        | Maven            | Jenkins |
+| **Framworks**        | TestNG          | Cucumber         |         |
+| **Language**         | Java            | Gherkin          |         |
+| **IDE**              | Eclipse         |                  |         |
+| **Packages**         | Apache POI      | WebDriverManager |         |
+| **Reports**          | Jenkins Reports | Extent Reports   |         |
+| **Version Control**  | Git             | Github           |         |
+| **Operating System** | Windows 10      |                  |         |
+| **Web Browser**      | Chrome          |                  |         |
 
 ## Modules
 
